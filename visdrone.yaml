@@ -1,0 +1,9 @@
+path: /Users/farhanishraq/Documents/Ants AI assessment/datasets/VisDrone_Dataset
+
+train: VisDrone2019-DET-train/images
+val: VisDrone2019-DET-val/images
+
+names:
+  0: person
+  1: car
+nc: 2
