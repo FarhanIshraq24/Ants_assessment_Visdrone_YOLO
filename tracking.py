@@ -1,9 +1,13 @@
 from ultralytics import YOLO
 
-model = YOLO("/Users/farhanishraq/runs/detect/train-2/weights/best.pt")
+model = YOLO("/Users/farhanishraq/runs/detect/runs/detect/visdrone_yolov8-5/weights/best.pt")
 
-model.track(
+results = model.track(
     source="test.mp4",
     tracker="bytetrack.yaml",
-    show=True
+    save=True,
+    conf=0.25,
+    persist=True
 )
+
+print("Tracking complete → check runs/detect/")

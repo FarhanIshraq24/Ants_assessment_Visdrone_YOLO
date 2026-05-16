@@ -1,25 +1,18 @@
 from ultralytics import YOLO
 
 def main():
-    # Load pretrained YOLOv8 model
-    model = YOLO("yolov8n.pt")  # start small for fast training
+    model = YOLO("yolov8n.pt")
 
-    # Train model
-    results = model.train(
-        data="datasets/VisDrone_Dataset/visdrone.yaml",  # your dataset config
+    model.train(
+        data="visdrone.yaml",
         epochs=10,
-        imgsz=416,
+        imgsz=640,
         batch=8,
-        device="cpu",   # Apple Silicon (use "cuda" if NVIDIA GPU)
-        workers=2,
+        device="mps",
         project="runs/detect",
         name="visdrone_yolov8",
-        patience=20,
-        cache=False
+        patience=20
     )
-
-    print("Training completed!")
-    print(results)
 
 if __name__ == "__main__":
     main()

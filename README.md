@@ -1,44 +1,37 @@
-# 🚁 VisDrone Object Detection, Counting & Tracking (YOLOv8)
+# 🚀 Smart Traffic Surveillance using YOLOv8 + ByteTrack
 
-This project is developed as part of the ANTS AI Assessment. It focuses on **object detection, human counting, and optional object tracking** using the VisDrone dataset with YOLOv8.
+## 📌 Project Overview
+This project implements a real-time object detection and tracking system using YOLOv8 trained on the VisDrone dataset. The system detects and counts **humans and vehicles** in real-time video streams using deep learning and multi-object tracking.
 
 ---
 
-## 📌 Project Overview
+## ⚙️ Features
+- YOLOv8-based object detection
+- Custom training on VisDrone dataset
+- Human & vehicle detection (2-class model)
+- ByteTrack-based multi-object tracking
+- Unique object counting (ID-based)
+- Real-time webcam & video inference
+- Annotated output video generation
 
-The goal of this project is to:
-- Detect **humans (persons)** and **vehicles (cars)** in aerial drone images/videos
-- Perform **real-time human counting**
-- (Optional) Apply **object tracking for continuous identification**
-- Evaluate model performance on a real-world drone dataset
+---
+
+## 🧠 Model Architecture
+- Base Model: YOLOv8n
+- Tracker: ByteTrack
+- Framework: Ultralytics
+- Input size: 640x640
+- Classes: Person, Car
 
 ---
 
 ## 📂 Dataset
-
-We use the **VisDrone 2019 Object Detection Dataset**:
-
-- Source: https://www.kaggle.com/datasets/banuprasadb/visdrone-dataset
-- Contains aerial images captured from drones
-- Highly dense scenes with:
-  - pedestrians
-  - vehicles
-  - occlusions
-  - small objects
-
-### 🔄 Classes used in this project:
-| Original Class | Mapped Class |
-|----------------|-------------|
-| Pedestrian     | Person (0)  |
-| People         | Person (0)  |
-| Car            | Car (1)     |
-| Van/Truck/Bus  | Car (1)     |
-
-Only **2 classes** are used for simplified detection.
+VisDrone Dataset (converted to YOLO format)
+- Person → class 0
+- Car → class 1
 
 ---
 
-## ⚙️ Installation
-
+## 🚀 Training
 ```bash
-pip install ultralytics opencv-python numpy matplotlib
+python train.py

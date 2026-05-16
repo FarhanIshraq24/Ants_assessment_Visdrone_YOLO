@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import cv2
 
-model = YOLO("/Users/farhanishraq/runs/detect/train-2/weights/best.pt")
+model = YOLO("/Users/farhanishraq/runs/detect/runs/detect/visdrone_yolov8-5/weights/best.pt")
 
 cap = cv2.VideoCapture(0)
 
@@ -10,7 +10,7 @@ while True:
     if not ret:
         break
 
-    results = model(frame)[0]
+    results = model(frame, conf=0.25)[0]   # FIX: confidence threshold
 
     persons = 0
     cars = 0

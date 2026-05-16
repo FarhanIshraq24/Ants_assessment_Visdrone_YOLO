@@ -1,11 +1,10 @@
 venv/
 datasets/
 __pycache__/
-*.pt
+
 *.pth
 *.zip
 *.mp4
 *.mov
-*.jpg
-*.png
+
 
